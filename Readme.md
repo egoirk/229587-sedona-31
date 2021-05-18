@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
-* Студент: [Евгений Петров](https://up.htmlacademy.ru/htmlcss/31/user/229587).
-* Наставник: `Неизвестно`.
+- Студент: [Евгений Петров](https://up.htmlacademy.ru/htmlcss/31/user/229587).
+- Наставник: `[Виктор Кан](https://htmlacademy.ru/profile/viktorkan)`.
 
 ---
 
