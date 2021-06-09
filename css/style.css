@@ -17,10 +17,6 @@
   --list-item-bg: #eeeeee;
   --special-catalog: #666666;
   --special-search: #333333;
-
-  --icon-recommendation-hous: url("../img/hous.svg");
-  --icon-recommendation-food: url("../img/food.svg");
-  --icon-recommendation-souvenirs: url("../img/souvenirs.svg");
 }
 
 /* Global */
@@ -29,8 +25,9 @@ html {
   background-color: #f2f2f2;
 }
 
-body {
-  width: 1200px;
+.wrapper {
+  background-color: #ffffff;
+  max-width: 1200px;
   margin: 0 auto;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
@@ -38,10 +35,7 @@ body {
   font-weight: 400;
   color: var(--basic-black);
   text-transform: uppercase;
-  background-color: #ffffff;
-  background-image: url("../img/bg.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
+
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
@@ -96,6 +90,10 @@ img {
   margin: 0 auto;
   text-align: center;
   line-height: 26px;
+  background-color: #806969;
+  background-image: url("../img/bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
 .container-header h1 {
@@ -124,27 +122,6 @@ img {
 
 .feature-item-bg {
   background-color: var(--list-item-bg);
-}
-
-.recommendation-hous {
-  background-image: var(--icon-recommendation-hous);
-  display: inline-block;
-  width: 75px;
-  height: 72px;
-}
-
-.recommendation-food {
-  background-image: var(--icon-recommendation-food);
-  display: inline-block;
-  width: 75px;
-  height: 70px;
-}
-
-.recommendation-souvenirs {
-  background-image: var(--icon-recommendation-souvenirs);
-  display: inline-block;
-  width: 64px;
-  height: 77px;
 }
 
 /* Search */
@@ -225,41 +202,6 @@ img {
   text-align: center;
   width: 46px;
   height: 48px;
-}
-
-.social-link_twitter {
-  background-image: url(../img/social/icon-twitter.png);
-}
-
-.social-link_twitter:hover {
-  background-image: url(../img/social/icon-twitter-hover.png);
-}
-
-.social-link_twitter:active {
-  background-image: url(../img/social/icon-twitter-active.png);
-}
-
-.social-link_facebook {
-  background-image: url(../img/social/icon-fb.png);
-}
-
-.social-link_facebook:hover {
-  background-image: url(../img/social/icon-fb-hover.png);
-}
-
-.social-link_facebook:active {
-  background-image: url(../img/social/icon-fb-active.png);
-}
-.social-link_youtube {
-  background-image: url(../img/social/icon-youtube.png);
-}
-
-.social-link_youtube:hover {
-  background-image: url(../img/social/icon-youtube-hover.png);
-}
-
-.social-link_youtube:active {
-  background-image: url(../img/social/icon-youtube-active.png);
 }
 
 .footer-copy {
