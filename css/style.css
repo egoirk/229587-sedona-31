@@ -10,13 +10,22 @@
   --button-second-default: #766357;
   --button-second-hover: #604e43;
   --button-second-activated: #503e33;
+  --button-third-default: #81b3d2;
+  --button-third-hover: #669ec0;
+  --button-third-activated: #5496bd;
   --nav-default: #766357;
   --nav-hover: #81b3d2;
   --nav-focus: #000000;
   --list-item-header: #81b3d2;
   --list-item-bg: #eeeeee;
+  --sorting-list-default: #81b3d2;
+  --sorting-list-hover: #81b3d2;
+  --sorting-list-focus: #000000;
+  --catalog-name-hover: #81b3d2;
+
   --special-catalog: #666666;
   --special-search: #333333;
+  --special-rating: #f2f2f2;
 }
 
 /* Global */
@@ -289,4 +298,118 @@ img {
 
 .search-button:active {
   background-color: var(--button-first-activated);
+}
+
+/* Filters */
+
+.filter {
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--basic-white);
+  background-color: #806969;
+  background-image: url("../img/search-bg.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.filter ul {
+  list-style: none;
+  line-height: 22px;
+}
+
+.filter h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Catalog */
+
+.sorting {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.sorting h3 {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.sorting-list {
+  list-style: none;
+}
+
+.sorting-list a {
+  color: var(--basic-black);
+  opacity: 30%;
+}
+
+.sorting-list a:hover {
+  color: var(--sorting-list-hover);
+  opacity: 100%;
+}
+.sorting-list a:focus {
+  color: var(--sorting-list-focus);
+  opacity: 100%;
+}
+
+.sorting-list a:default {
+  color: var(--sorting-list-default);
+  opacity: 100%;
+}
+
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-item h3 {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.catalog-item-name {
+  color: var(--basic-black);
+}
+
+.catalog-item-name:hover {
+  color: var(--catalog-name-hover);
+}
+.catalog-item-name:focus {
+  color: var(--basic-black);
+  opacity: 30%;
+}
+
+.catalog-rating {
+  color: var(--special-catalog);
+  background-color: var(--special-rating);
+}
+
+.details-button {
+  display: inline-block;
+  width: 110px;
+  height: 27px;
+  background-color: var(--button-third-default);
+}
+
+.details-button:hover {
+  background-color: var(--button-third-hover);
+}
+
+.details-button:active {
+  background-color: var(--button-third-activated);
+}
+
+.reservation-button {
+  width: 142px;
+  height: 27px;
+  background-color: var(--button-second-default);
+}
+
+.reservation-button:hover {
+  background-color: var(--button-second-hover);
+}
+
+.reservation-button:active {
+  background-color: var(--button-second-activated);
 }

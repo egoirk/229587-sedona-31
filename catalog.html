@@ -12,13 +12,14 @@
     <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body>
-
-    <header>
-        <nav>
-          <a href="index.html">
-            <img src="img/logo.svg" width="138" height="70" alt="Логотип туристического агенства «Седона»">
+    <div class="wrapper">
+      <header class="main-header">
+        <nav class="main-nav">
+          <a  class="main-header-logo" href="index.html">
+            <img src="img/logo.svg" width="138" height="70" alt="Логотип сайта города «Седона»">
           </a>
-          <ul>
+          
+            <ul class="site-nav">
             <li><a href="blank.html">Информация</a></li>
             <li><a href="blank.html">Фото и видео</a></li>
             <li><a href="blank.html">Карта штата</a></li>
@@ -30,11 +31,11 @@
     <main>
       <h1>Поиск гостиницы</h1>
 
-      <section>
+      <section class="filter">
         <h2>Фильтр гостиниц</h2>
         <form method="get" action="https://echo.htmlacademy.ru">
           <fieldset>
-            <legend>Инфрастуктура:</legend>
+            <h3>Инфрастуктура:</h3>
             <ul>
               <li>
                 <input type="checkbox" name="pool" id="filter-pool" checked>
@@ -51,7 +52,7 @@
             </ul>
           </fieldset>
           <fieldset>
-            <legend>Тип жилья:</legend>
+            <h3>Тип жилья:</h3>
             <ul>
               <li>
                 <input type="checkbox" name="hotel" id="filter-hotel" checked>
@@ -68,7 +69,7 @@
             </ul>
           </fieldset>
           <fieldset>
-            <legend>Стоимость в сутки, ₽:</legend>
+            <h3>Стоимость в сутки, ₽:</h3>
             <p>
               <label for="price-from">От</label>
               <input id="price-from" type="number" name="from" placeholder="0"> 
@@ -85,90 +86,95 @@
         </form>
       </section>
 
-      <section>
+      <section class="sorting">
         <h2>Сортировка результатов</h2>
         <h3>Найдено: 3</h3>
         <p>Сортировка:</p>
-        <ul>
+        <ul class="sorting-list">
           <li><a href="#">По цене</a></li>
-          <li><a href="#">По тип</a>у</li>
+          <li><a href="#">По типу</a></li>
           <li><a href="#">По рейтингу</a></li>
         </ul>
-        <ul>
+        <ul class="sorting-list">
           <li><a href="#">вывести по возрастанию</a></li>
           <li><a href="#">вывести по убыванию</a></li>
         </ul>
       </section>
 
-      <section>
+      <section class="catalog">
         <h2>Гостиницы</h2>
-        <ul>
-          <li>
-            <h3><a href="#">Amara Resort & Spa</a></h3>
+        <ul class="catalog-list">
+          <li class="catalog-item">
+            <h3><a class="catalog-item-name" href="#">Amara Resort & Spa</a></h3>
               <p>
                 <img src="img/amara_resort_spa.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
               </p>
             <p>Гостиница</p>
             <p>От 4000 ₽</p>
-            <a href="#">Подробнее</a>
-            <a href="#">Забронировать</a>
-            <p>Рейтинг: 8,5</p>
+            <a class="button details-button" href="#">Подробнее</a>
+            <button class="button reservation-button" type="button">Забронировать</button>
+            <div class="catalog-rating">
+              <p>Рейтинг: 8,5</p>
+            </div>
           </li>
-          <li>
-            <h3><a href="#">Desert Quail Inn</a></h3>
+          <li class="catalog-item">
+            <h3><a class="catalog-item-name" href="#">Desert Quail Inn</a></h3>
               <p>
                 <img src="img/desert_quail_inn.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
               </p>
             <p>Мотель</p>
             <p>От 3000 ₽</p>
-            <a href="#">Подробнее</a>
-            <a href="#">Забронировать</a>
-            <p>Рейтинг: 8,9</p>
+            <a class="button details-button" href="#">Подробнее</a>
+            <button class="button reservation-button" type="button">Забронировать</button>
+            <div>
+              <p class="catalog-rating">Рейтинг: 8,9</p>
+            </div>
           </li>
-          <li>
-            <h3><a href="#">Villas at Poco Diablo</a></h3>
+          <li class="catalog-item">
+            <h3><a class="catalog-item-name" href="#">Villas at Poco Diablo</a></h3>
               <p>
                 <img src="img/villas_at_poco_diablo.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablo">
               </p>
             <p>Апартаменты</p>
             <p>От 2000 ₽</p>
-            <a href="#">Подробнее</a>
-            <a href="#">Забронировать</a>
-            <p>Рейтинг: 9,2</p>
+            <a class="button details-button" href="#">Подробнее</a>
+            <button class="button reservation-button" type="button">Забронировать</button>
+            <div class="catalog-rating">
+              <p>Рейтинг: 9,2</p>
+            </div>
           </li>
         </ul>
       </section>
 
     </main>
 
-    <footer>
-        <section>
-          <h2>Телефон</h2>
-          <p>
-            #visitSEDONA<br>
-            <a href="tel:+78005558628">+7 800 555-86-28</a>
-          </p>
-        </section>
-        <section>
-          <h2>Социальные сети</h2>
-          <ul>
-            <li>
-              <a href="#">Твиттер</a>
-            </li>
-            <li>
-              <a href="#">Фейсбук</a>
-            </li>
-            <li>
-              <a href="#">YouTube</a>
-            </li>
-          </ul>
-        </section>
+    <footer class="main-footer">
+      <section class="footer-contacts">
+        <h2>Телефон</h2>
         <p>
-          Website by
-          <a href="https://htmlacademy.ru/intensive/htmlcss">
-            <img src="img/logo_htmlacademy.svg" width="115" height="33" alt="Логотип HTML Academy">
-          </a>
+          #visitSEDONA<br>
+          <a  class="footer-phone" href="tel:+78005558628">+7 800 555-86-28</a>
         </p>
-      </footer>
+      </section>
+      <section class="footer-social">
+        <h2>Социальные сети</h2>
+        <ul>
+          <li>
+            <a class="social-link social-link_twitter" href="#">Twitter</a>
+          </li>
+          <li>
+            <a class="social-link social-link_facebook" href="#">Facebook</a>
+          </li>
+          <li>
+            <a class="social-link social-link_youtube" href="#">YouTube</a>
+          </li>
+        </ul>
+      </section>
+      <p>
+        Website by
+        <a  class="footer-copy footer-copy_logo" href="https://htmlacademy.ru/intensive/htmlcss"></a>
+      </p>
+    </footer>
+    </div>
   </body>
 </html>
