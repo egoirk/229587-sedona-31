@@ -12,14 +12,14 @@
     <link rel="manifest" href="manifest.webmanifest">
   </head>
 
-  <body class="page-body">
+  <body>
     <div class="wrapper">
     <header class="main-header">
-      <nav class="main-nav">
+      
         <a  class="main-header-logo">
           <img src="img/logo.svg" width="138" height="70" alt="Логотип сайта города «Седона»">
         </a>
-        
+      <nav class="main-nav"> 
           <ul class="site-nav">
             <li><a href="blank.html">Информация</a></li>
             <li><a href="blank.html">Фото и видео</a></li>
@@ -30,23 +30,29 @@
       </nav>
     </header>
 
-    <main class="container background-img">
+    <main class="container">
       <div class="container-header">
-      <img src="img/welcom_sedona.svg" width="456" height="350" alt="Добро пожаловать в Седону">
-      <h1>Седона — небольшой городок в Аризоне,<br> заслуживающий большего!</h1>
-      <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+        <img src="img/welcom_sedona.svg" width="456" height="350" alt="Добро пожаловать в Седону">
+      </div>
+      <div  class="container-header-info">
+        <h1>Седона — небольшой городок в Аризоне,<br> заслуживающий большего!</h1>
+        <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
       </div>
       <section class="features">
-        <h2>Преимущества и рекомендации</h2>
+        <h2 class="visually-hidden">Преимущества и рекомендации</h2>
         <ul class="features-list">
-          <li class="feature-item feature-item-header">
-            <h3>Настоящий городок</h3>
+          <li class="feature-item feature-item-left">
+            <div>
+            <h3>Настоящий <br> городок</h3>
             <p>— №1 —</p>
             <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
-            <p><img src="img/cause-1.jpg" width="800" height="256" alt="Одно из зданий города"></p>
+            </div>
+            <div>
+              <img class="as" src="img/cause-1.jpg" width="800" height="256" alt="Одно из зданий города">
+            </div>
           </li>
           <li>  
-            <ul class="features-list">
+            <ul class="features-list features-list-body">
               <li class="feature-item">
                 <h3>Жильё</h3>
                 
@@ -64,14 +70,16 @@
               </li>
             </ul>
           </li>
-          <li class="feature-item feature-item-header">
-            <p><img src="img/cause-2.jpg" width="800" height="256" alt="Мост дьявола"></p>
-            <h3>Там есть Мост дьявола</h3>
-            <p>— №2 —</p>
-            <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+          <li class="feature-item feature-item-right">
+            <div><img src="img/cause-2.jpg" width="800" height="256" alt="Мост дьявола"></div>
+            <div>
+              <h3>Там есть <br> Мост дьявола</h3>
+              <p>— №2 —</p>
+              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            </div>
           </li>
           <li>
-            <ul class="features-list feature-item-bg">
+            <ul class="features-list feature-item-bg features-list-body">
               <li class="feature-item">
                 <h3>небольшая площадь</h3>
                 <p>— №3 —</p>
@@ -93,29 +101,30 @@
       </section>
 
       <section class="search">
-        <h2>Поиск гостиниц</h2>
+        <h2 class="visually-hidden">Поиск гостиниц</h2>
         <h3>Заинтересовались?</h3>
         <p class="search-info">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
         <a class="button modal-button" href="blank.html">Поиск гостиницы в Седоне</a>
       </section>
 
       <section class="map">
-        <h2>Карта города</h2>
+        <h2 class="visually-hidden">Карта города</h2>
         <img src="img/map.jpg" width="1199" height="594" alt="Картагорода Седона">
       </section>
     
     </main>
 
     <footer class="main-footer">
+      <div class="container">
       <section class="footer-contacts">
-        <h2>Телефон</h2>
+        <h2 class="visually-hidden">Телефон</h2>
         <p>
           #visitSEDONA<br>
           <a  class="footer-phone" href="tel:+78005558628">+7 800 555-86-28</a>
         </p>
       </section>
       <section class="footer-social">
-        <h2>Социальные сети</h2>
+        <h2 class="visually-hidden">Социальные сети</h2>
         <ul>
           <li>
             <a class="social-link social-link_twitter" href="#">Twitter</a>
@@ -128,14 +137,15 @@
           </li>
         </ul>
       </section>
-      <p>
+      <p class="footer-copyright">
         Website by
         <a  class="footer-copy footer-copy_logo" href="https://htmlacademy.ru/intensive/htmlcss"></a>
       </p>
+    </div>
     </footer>
 
     <section class="modal">
-      <h2>Форма поиска</h2>
+      <h2 class="visually-hidden">Форма поиска</h2>
       <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
         <p>
           <label for="appointment-date">Дата заезда:</label>
