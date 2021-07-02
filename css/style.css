@@ -144,6 +144,12 @@ img {
 }
 
 .container-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-header-img {
   padding: 76px 371px;
   background-color: #806969;
   background-image: url("../img/bg.jpg");
@@ -151,17 +157,13 @@ img {
   background-repeat: no-repeat;
 }
 
-.container-header-info {
-  text-align: center;
-  line-height: 26px;
-}
-
-.container-header-info h1 {
+.container-header h1 {
   font-size: 21px;
+  text-align: center;
   margin: 42px 10px;
 }
 
-.container-header-info p {
+.container-header p {
   line-height: 26px;
   margin: 16px 10px 51px;
 }
@@ -225,7 +227,9 @@ img {
 /* Search */
 
 .search {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   line-height: 24px;
 }
 
@@ -236,6 +240,7 @@ img {
 
 .search-info {
   font-size: 14px;
+  text-align: center;
 }
 
 /* Button */
@@ -255,7 +260,7 @@ img {
   height: 86px;
   font-size: 21px;
   line-height: 26px;
-
+  margin-top: 24px;
   background-color: var(--button-second-default);
 }
 
@@ -265,6 +270,10 @@ img {
 
 .modal-button:active {
   background-color: var(--button-second-activated);
+}
+
+.map {
+  display: flex;
 }
 
 /* Main footer */
@@ -297,10 +306,6 @@ img {
   justify-self: center;
 }
 
-.footer-social ul {
-  list-style: none;
-}
-
 .footer-copyright {
   max-width: 150px;
   margin: 0;
@@ -308,6 +313,15 @@ img {
 }
 
 /* Social button */
+
+.footer-social-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .social-link {
   display: inline-block;
@@ -337,6 +351,8 @@ img {
 /* Modal */
 
 .modal {
+  width: 568px;
+  justify-self: center;
   line-height: 26px;
   font-weight: 700;
   text-align: center;
@@ -347,6 +363,22 @@ img {
 
 /* Modal form */
 
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.search-form p,
+.search-form .search-button {
+  grid-column: 1 / -1;
+}
+
+.search-form p:nth-last-of-type(2) {
+  grid-column: 1 / 2;
+}
+.search-form p:last-of-type {
+  grid-column: 2 / -1;
+}
 .search-form input[type="date"],
 .search-form input[type="date"] {
   font: inherit;
@@ -393,6 +425,7 @@ img {
   width: 458px;
   height: 58px;
   background-color: var(--button-first-default);
+  justify-self: center;
 }
 
 .search-button:hover {
