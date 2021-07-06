@@ -50,9 +50,6 @@ html {
   text-transform: uppercase;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
   min-height: 100%;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
 }
 
 a {
@@ -78,14 +75,6 @@ img {
 }
 
 /* Main header */
-
-.main-header {
-  grid-column: 1 / -1;
-  grid-row: 1 / 2;
-  display: grid;
-  grid-template-rows: min-content 1fr;
-  position: relative;
-}
 
 .main-nav {
   padding: 15px 73px;
@@ -117,7 +106,7 @@ img {
 }
 
 .site-nav li {
-  width: 230px;
+  width: 265px;
 }
 
 .site-nav li:nth-child(3) {
@@ -161,6 +150,7 @@ img {
   padding: 76px 371px;
   background-color: #806969;
   background-image: url("../img/bg.jpg");
+  background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -326,7 +316,6 @@ img {
 
 .footer-social-icon {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   margin: 0;
   padding: 0;
@@ -454,8 +443,10 @@ img {
   color: var(--basic-white);
   background-color: #806969;
   background-image: url("../img/search-bg.png");
+  background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
+  margin-bottom: 29px;
 }
 
 .filter ul {
@@ -471,9 +462,6 @@ img {
 .catalog-filter {
   display: grid;
   grid-template-columns: min-content min-content 1fr;
-  margin: 0;
-  margin-bottom: 15px;
-  padding: 0;
 }
 
 .price-filter {
@@ -489,19 +477,35 @@ img {
   font-size: 12px;
   line-height: 18px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: min-content min-content 1fr min-content;
+  margin: 0;
+  padding: 0 73px;
 }
 
 .sorting h3 {
+  width: 117px;
+  justify-self: start;
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+  padding: 0;
+  padding-right: 46px;
+  margin: 0;
+}
+
+.sorting-paragraph {
+  line-height: 18px;
+  margin: 0;
+
+  padding-right: 40px;
 }
 
 .sorting-list {
   display: flex;
   justify-content: flex-start;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sorting-list a {
@@ -523,51 +527,55 @@ img {
   opacity: 100%;
 }
 
-.catalog-item {
+.catalog-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-item {
   display: grid;
-  grid-template-columns: 135px 1fr 112px;
+  grid-template-columns: 135px 1fr;
+  column-gap: 29px;
+  padding: 30px 73px;
+}
+
+.catalog-item p {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-item img {
+  display: block;
 }
 
 .catalog-item-info {
-  display: grid;
-  justify-self: start;
-  padding-left: 29px;
-  grid-template-columns: 1fr 142px;
-  grid-template-rows: repeat(2, 1fr) min-content;
-  column-gap: 6px;
-  order: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
-.catalog-item-info h3 {
-  margin: 0;
-  grid-column: 1 / -1;
-  grid-row: 1 / 2;
-}
-
-.catalog-item-info p {
-  text-align: left;
-  margin: 0;
-  grid-row: 2 / 3;
-}
-.catalog-item-info .catalog-item-type {
-  grid-column: 1 / 2;
-}
-.catalog-item-info .catalog-item-price {
-  grid-column: 2 / -1;
-}
-
-.catalog-rating {
+.catalog-item-spec {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  order: 2;
 }
 
-.catalog-item h3 {
+.catalog-item-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog-item-type p {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-item-spec h3 {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 
 .catalog-item-name {
@@ -582,12 +590,34 @@ img {
   opacity: 30%;
 }
 
-.catalog-rating {
+.catalog-item-rating {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   color: var(--special-catalog);
 }
 
-.catalog-rating p {
+.catalog-item-rating p:nth-child(2) {
   background-color: var(--special-rating);
+}
+
+.rating-star {
+  margin: 0;
+  padding: 0;
+  align-self: flex-end;
+  height: 17px;
+  background: url("../img/icon/star.svg") space;
+}
+
+.rating-star-four {
+  width: 91px;
+}
+.rating-star-three {
+  width: 67px;
+}
+.rating-star-two {
+  width: 43px;
 }
 
 .details-button {
