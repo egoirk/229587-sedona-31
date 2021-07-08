@@ -21,9 +21,14 @@
   --sorting-list-default: #81b3d2;
   --sorting-list-hover: #81b3d2;
   --sorting-list-focus: #000000;
+  --sorting-list-active: #81b3d2;
   --catalog-name-hover: #81b3d2;
   --social-hover: #669ec0;
   --social-active: #5496bd;
+  --toggle: #ababab;
+  --basic-gray: #e5e5e5;
+  --sorting-control-hover: #000000;
+  --sorting-control-active: #81b3d2;
 
   --special-catalog: #666666;
   --special-search: #333333;
@@ -550,6 +555,7 @@ img {
 /* Filters */
 
 .filter {
+  height: 217px;
   font-size: 14px;
   line-height: 21px;
   color: var(--basic-white);
@@ -561,26 +567,245 @@ img {
   margin-bottom: 29px;
 }
 
-.filter ul {
+.filter fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.filter-list {
   list-style: none;
   line-height: 22px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fieldset:nth-child(2) {
+  padding-left: 117px;
+}
+
+.filter-list label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+
+  left: 41px;
+  margin-top: 20px;
+}
+
+.filter-checkbox-on + label::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 0;
+  width: 26px;
+  height: 23px;
+  background-image: url("../img/icon/checkbox-on.svg");
+  background-position: 0 0;
+}
+
+.filter-checkbox + label::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  background-image: url("../img/icon/checkbox-off.svg");
+  border-radius: 3px;
+}
+
+.filter-checkbox:checked + label::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 0;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/icon/checkbox-on.svg");
+  background-position: 0 0;
+}
+
+.filter-checkbox:disabled:checked + label::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 0;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/icon/checkbox-on-disabled.svg");
+  background-position: 0 0;
+}
+
+.filter-checkbox:disabled + label::before {
+  content: "";
+  position: absolute;
+  left: -41px;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  background-image: url("../img/icon/checkbox-off-disabled.svg");
+  background-position: 0 0;
 }
 
 .filter h3 {
   font-size: 16px;
+  line-height: 21px;
   font-weight: 700;
+  margin: 0;
 }
 
 .catalog-filter {
   display: grid;
-  grid-template-columns: min-content min-content 1fr;
+  grid-template-columns: 54px 485px 1fr;
+  padding: 26px 73px 31px 72px;
 }
 
-.price-filter {
-  width: 317px;
-  margin: 0 73px;
+.filter-item {
+  position: relative;
   padding: 0;
+  margin-top: 27px;
+  margin-bottom: 4px;
+  margin-left: 27px;
+  border: none;
+  width: 317px;
   justify-self: end;
+}
+
+.filter-item legend {
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.range-controls {
+  position: relative;
+  height: 10px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 0;
+  padding-top: 20px;
+  border-radius: 2px;
+}
+
+.range-controls .scale {
+  width: 316px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+  width: 248px;
+  height: 2px;
+  background: var(--basic-white);
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid var(--basic-white);
+  background-color: var(--toggle);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 var(--toggle);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 8px solid var(--basic-white);
+  background-color: var(--toggle);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 var(--toggle);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 0;
+}
+
+.range-controls .toggle-max {
+  left: 244px;
+}
+
+.price-controls {
+  display: flex;
+  justify-content: space-around;
+  width: 313px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  color: var(--basic-white);
+  border: 2px solid var(--basic-white);
+}
+
+.price-controls::before {
+  content: "";
+  position: absolute;
+  left: 157px;
+  top: 7px;
+  width: 2px;
+  height: 22px;
+  background-color: var(--basic-white);
+}
+
+.price-controls input {
+  font-size: inherit;
+  width: 60px;
+  color: var(--basic-white);
+  border-radius: 2px;
+  background-color: transparent;
+  border: none;
+}
+
+.price-controls input::-webkit-outer-spin-button,
+.price-controls input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.min-price,
+.max-price {
+  padding-top: 7px;
+}
+
+.filter-item-button {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  width: 137px;
+  height: 36px;
+  color: var(--basic-white);
+  text-transform: uppercase;
+  background-image: none;
+  background-color: transparent;
+  border: 2px solid var(--basic-white);
+  box-sizing: border-box;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 27%;
+  bottom: -20px;
+  font-family: inherit;
+}
+
+.filter-item-button:hover {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
 }
 
 /* Catalog */
@@ -591,7 +816,7 @@ img {
   display: grid;
   grid-template-columns: min-content min-content 1fr min-content;
   margin: 0;
-  padding: 0 73px;
+  padding: 0 73px 31px;
 }
 
 .sorting h3 {
@@ -620,9 +845,14 @@ img {
   margin: 0;
 }
 
+.sorting-list .sorting-list-active {
+  color: var(--sorting-list-active);
+}
+
 .sorting-list a {
   color: var(--basic-black);
   opacity: 30%;
+  padding-right: 32px;
 }
 
 .sorting-list a:hover {
@@ -639,6 +869,23 @@ img {
   opacity: 100%;
 }
 
+.sorting-list-control {
+  display: flex;
+  width: 34px;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.sorting-list-control a:hover path {
+  fill: var(--sorting-control-hover);
+}
+.sorting-list-control a:focus path,
+.sorting-list-control a:active path {
+  fill: var(--sorting-control-active);
+}
+
 .catalog-list {
   list-style: none;
   margin: 0;
@@ -650,6 +897,11 @@ img {
   grid-template-columns: 135px 1fr;
   column-gap: 29px;
   padding: 30px 73px;
+  border-top: var(--basic-gray) solid 1px;
+}
+
+.catalog-item:last-of-type {
+  border-bottom: var(--basic-gray) solid 1px;
 }
 
 .catalog-item p {

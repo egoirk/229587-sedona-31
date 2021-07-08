@@ -34,54 +34,60 @@
       <section class="filter">
         <h2 class="visually-hidden">Фильтр гостиниц</h2>
         <form class="catalog-filter" method="get" action="https://echo.htmlacademy.ru">
-          <fieldset>
-            <h3>Инфрастуктура:</h3>
-            <ul>
+          <fieldset class="fieldset">
+            <h3>Инфраструктура:</h3>
+            <ul class="filter-list">
               <li>
-                <input type="checkbox" name="pool" id="filter-pool" checked>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="pool" id="filter-pool" checked>
                 <label for="filter-pool">Бассейн</label>
               </li>
               <li>
-                <input type="checkbox" name="parking" id="filter-parking">
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="parking" id="filter-parking">
                 <label for="filter-parking">Парковка</label>
               </li>
               <li>
-                <input type="checkbox" name="wifi" id="filter-wifi">
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="wifi" id="filter-wifi" disabled>
                 <label for="filter-wifi">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset>
+          <fieldset class="fieldset">
             <h3>Тип жилья:</h3>
-            <ul>
+            <ul class="filter-list">
               <li>
-                <input type="checkbox" name="hotel" id="filter-hotel" checked>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
                 <label for="filter-hotel">Гостиница</label>
               </li>
               <li>
-                <input type="checkbox" name="motel" id="filter-motel" checked>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
                 <label for="filter-motel">Мотель</label>
               </li>
               <li>
-                <input type="checkbox" name="apartments" id="filter-apartments" checked>
+                <input class="visually-hidden filter-checkbox" type="checkbox" name="apartments" id="filter-apartments" disabled checked>
                 <label for="filter-apartments">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="price-filter">
-            <h3>Стоимость в сутки, ₽:</h3>
-            <p>
-              <label for="price-from">От</label>
-              <input id="price-from" type="number" name="from" placeholder="0"> 
-            </p>
-            <p>
-              <label for="price-before">До</label>
-              <input id="price-before" type="number" name="before" placeholder="3000">
-            </p>
-            <p>
-              <input type="range" min="0" max="5000" step="1">
-            </p>
-            <button type="submit">Показать</button>
+          <fieldset class="filter-item">
+            <legend>Стоимость в сутки, ₽:</legend>
+            <div class="range-filter">
+              <div class="price-controls">              
+                <label class="min-price">
+                  от <input type="number" name="min-price" value="0" min="0" max="3000" step="100">
+                </label>
+                <label class="max-price">
+                  до <input type="number" name="max-price" value="3000" min="0" max="3000" step="100">
+                </label>
+              </div>
+              <div class="range-controls">
+                <div class="scale">
+                  <div class="bar"></div>
+                </div>
+                <div class="toggle toggle-min" tabindex="0"></div>
+                <div class="toggle toggle-max" tabindex="0"></div>
+              </div>
+            </div>
+            <button class="filter-item-button" type="submit">Показать</button>
           </fieldset>
           
         </form>
@@ -92,13 +98,17 @@
         <h3>Найдено: 3</h3>
         <p class="sorting-paragraph">Сортировка:</p>
         <ul class="sorting-list">
-          <li><a href="#">По цене</a></li>
+          <li><a class="sorting-list-active" href="#">По цене</a></li>
           <li><a href="#">По типу</a></li>
           <li><a href="#">По рейтингу</a></li>
         </ul>
-        <ul class="sorting-list">
-          <li><a href="#">вывести по возрастанию</a></li>
-          <li><a href="#">вывести по убыванию</a></li>
+        <ul class="sorting-list-control">
+          <li>
+            <a href="#"><svg width="11" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 0L0 10h11L5.5 0z" fill="#CACACA"/></svg></a>
+          </li>
+          <li>
+            <a class="sorting-list-control-active" href="#"><svg width="11" height="10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10L0 0h11" fill="#81B3D2"/></svg></a>
+          </li>
         </ul>
       </section>
 
@@ -187,13 +197,28 @@
         <h2 class="visually-hidden">Социальные сети</h2>
         <ul class="footer-social-icon">
           <li>
-            <a class="social-link social-link_twitter" href="#">Twitter</a>
+            <a class="social-link" href="#">
+              <svg width="46" height="48" viewBox="0 0 46 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="46" height="48" fill="#81B3D2"/>
+                <path d="M25.95 17.1441C27.635 16.6481 28.934 17.4141 29.527 18.3231C30.2 18.0921 30.858 17.8421 31.538 17.6151C31.5249 18.3015 31.2117 18.9476 30.681 19.3831C31.366 19.5531 31.985 18.8921 31.985 18.8921C31.816 19.8921 30.979 20.6801 30.422 20.9161C30.191 27.6661 27.247 32.1331 20.345 31.9981H19.899C19.489 31.9981 15.735 31.5381 15.001 30.1111C17.272 30.3071 18.894 29.6891 19.694 28.9341C18.734 28.6341 17.015 28.4571 16.715 25.9841C17.064 26.0901 17.279 26.2121 17.905 26.1031C16.705 25.2471 15.374 24.5301 15.448 22.3301C15.733 22.6581 16.515 22.8661 16.788 22.8021C16.085 22.5611 14.818 19.4421 15.894 17.8501C17.712 19.7041 19.629 21.4561 23.046 21.6231C23.254 19.3301 24.183 17.7931 25.95 17.1441Z" fill="white"/>
+              </svg>
+            </a>
           </li>
           <li>
-            <a class="social-link social-link_facebook" href="#">Facebook</a>
+            <a class="social-link" href="#">
+              <svg width="46" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="path1" fill="#81B3D2" d="M0 0h46v48H0z"/>
+                <path d="M29 17v-4h-4a4 4 0 00-4 4v4h-4v4h4v10h4V25h4v-4h-4v-4h4z" fill="#fff"/>
+              </svg>
+            </a>
           </li>
           <li>
-            <a class="social-link social-link_youtube" href="#">YouTube</a>
+            <a class="social-link" href="#">
+              <svg width="46" height="48" viewBox="0 0 46 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="46" height="48" fill="#81B3D2"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 16H30C31.65 16 33 17.35 33 19V29C33 30.65 31.65 32 30 32H16C14.35 32 13 30.65 13 29V19C13 17.35 14.35 16 16 16ZM19.027 20.002V27.998L28.014 24L19.027 20.002Z" fill="white"/>
+              </svg>
+            </a>
           </li>
         </ul>
       </section>
