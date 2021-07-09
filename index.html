@@ -109,7 +109,7 @@
 
       <section class="map">
         <h2 class="visually-hidden">Карта города</h2>
-        <img src="img/map.jpg" width="1199" height="594" alt="Картагорода Седона">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249200.86904324414!2d-111.92564442313366!3d34.849898988157626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da6cb622ec7bf%3A0x54a7abe72faf1c03!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNiwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1625855793076!5m2!1sru!2sru" width="1199" height="594" style="border:0;" allowfullscreen="" loading="lazy" title="Карта города Седоны"></iframe>
       </section>
     
     </main>
@@ -159,25 +159,53 @@
     </div>
     </footer>
 
-    <section class="modal">
+    <section class="modal modal--show">
       <h2 class="visually-hidden">Форма поиска</h2>
       <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-        <p>
+        <p class="search-form-date">
           <label for="appointment-date">Дата заезда:</label>
-          <input id="appointment-date" type="date" name="date" value="2021-01-01"> 
+          <input id="appointment-date" type="date" name="date" placeholder="24 апреля 2017"> 
         </p>
-        <p>
+        <p class="search-form-date">
           <label for="checkout-date">Дата выезда:</label>
-          <input id="checkout-date" type="date" name="date" value="2021-01-10">
+          <input id="checkout-date" type="date" name="date" placeholder="4 июля 2017">
         </p>
-        <p>
-          <label for="appointment-name">Взрослые:</label>
-          <input id="appointment-name" type="number" name="grown" placeholder="2">
+
+        <div class="search-form-appointment">
+          <p class="search-form-type">
+            <label for="appointment-name">Взрослые:</label>
+            <div class="appointment-input">
+              <button class="btn-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
+                <svg class="btn-minus-ico" width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="12" height="3" fill="" />
+                </svg>
+              </button>
+              <input id="appointment-name" type="number" name="grown" placeholder="2" min="1" readonly>
+              <button class="btn-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
+                <svg class="btn-plus-ico" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="" />
+                </svg>
+              </button>
+            </div>
+          </p>
+       
+          <p class="search-form-type">
+          <label for="appointment-child">Дети:</label>
+          <div class="appointment-input">
+            <button class="btn-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
+              <svg class="btn-minus-ico" width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="3" fill="" />
+              </svg>
+            </button>
+            <input id="appointment-child" type="number" name="child" placeholder="1" min="0" readonly>
+            <button class="btn-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
+              <svg class="btn-plus-ico" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="" />
+              </svg>
+            </button>
+          </div>
         </p>
-        <p>
-          <label for="appointment-phone">Дети:</label>
-          <input id="appointment-phone" type="number" name="child" placeholder="1">
-        </p>
+        </div>
         <button class="button search-button" type="submit">Найти</button>
       </form>
     </section>
