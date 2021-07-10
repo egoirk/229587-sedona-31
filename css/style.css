@@ -380,7 +380,16 @@ img {
   opacity: 0.9;
 }
 
-.main-footer .container {
+.inner-footer {
+  width: 100%;
+  line-height: 26px;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-color: var(--basic-white);
+}
+
+.main-footer .container,
+.inner-footer .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0;
@@ -641,12 +650,6 @@ input[type="number"]:focus {
   appearance: none;
   -moz-appearance: textfield;
   outline: none;
-  background-color: #f2f2f2;
-  border: 2px solid #f2f2f2;
-  border-radius: 0px;
-  text-align: center;
-  line-height: 26px;
-  font-weight: 700;
   padding: 0;
   margin: 0;
 }
@@ -918,6 +921,7 @@ input[type="number"]:focus {
 .min-price,
 .max-price {
   padding-top: 7px;
+  padding-left: 40px;
 }
 
 .filter-item-button {
@@ -969,7 +973,6 @@ input[type="number"]:focus {
 .sorting-paragraph {
   line-height: 18px;
   margin: 0;
-
   padding-right: 40px;
 }
 
@@ -1032,7 +1035,7 @@ input[type="number"]:focus {
   display: grid;
   grid-template-columns: 135px 1fr;
   column-gap: 29px;
-  padding: 30px 73px;
+  padding: 23px 73px 30px;
   border-top: var(--basic-gray) solid 1px;
 }
 
@@ -1043,6 +1046,7 @@ input[type="number"]:focus {
 .catalog-item p {
   margin: 0;
   padding: 0;
+  padding-top: 7px;
 }
 
 .catalog-item img {
@@ -1062,12 +1066,15 @@ input[type="number"]:focus {
 
 .catalog-item-type {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .catalog-item-type p {
   margin: 0;
   padding: 0;
+  padding-top: 7px;
+  padding-right: 6px;
+  width: 110px;
 }
 
 .catalog-item-spec h3 {
@@ -1099,7 +1106,15 @@ input[type="number"]:focus {
 }
 
 .catalog-item-rating p:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   background-color: var(--special-rating);
+  width: 110px;
+  height: 27px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .rating-star {
@@ -1120,11 +1135,18 @@ input[type="number"]:focus {
   width: 43px;
 }
 
+.catalog-item-button {
+  display: flex;
+  flex-direction: row;
+}
+
 .details-button {
-  display: inline-block;
-  width: 110px;
-  height: 27px;
   background-color: var(--button-third-default);
+  font-size: 14px;
+  margin-top: 15px;
+  margin-right: 6px;
+  padding: 3px 16px 3px 17px;
+  font-weight: 700;
 }
 
 .details-button:hover {
@@ -1139,6 +1161,10 @@ input[type="number"]:focus {
 .reservation-button {
   width: 142px;
   height: 27px;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 15px;
+  font-weight: 700;
   background-color: var(--button-second-default);
 }
 
