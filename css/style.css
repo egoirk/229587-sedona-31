@@ -152,21 +152,20 @@ img {
 .container-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  text-align: center;
 }
 
 .container-header-img {
-  padding: 76px 371px;
+  padding: 76px 0;
   background-color: #806969;
   background-image: url("../img/bg.jpg");
-  background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
 }
 
 .container-header h1 {
   font-size: 21px;
-  text-align: center;
   margin: 42px 10px;
 }
 
@@ -337,24 +336,6 @@ img {
   border: none;
 }
 
-.modal-button {
-  width: 568px;
-  height: 56px;
-  font-size: 21px;
-  line-height: 26px;
-  margin-top: 24px;
-  padding-top: 30px;
-  background-color: var(--button-second-default);
-}
-
-.modal-button:hover {
-  background-color: var(--button-second-hover);
-}
-
-.modal-button:active {
-  background-color: var(--button-second-activated);
-}
-
 .map {
   background-image: url("../img/map.jpg");
   display: block;
@@ -490,10 +471,39 @@ img {
 
 /* Modal */
 
+.popup {
+  width: 568px;
+  height: 86px;
+  position: relative;
+  margin-top: 24px;
+}
+
+.modal-button {
+  width: 100%;
+  height: 100%;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-second-default);
+  z-index: 301;
+}
+
+.modal-button:hover {
+  background-color: var(--button-second-hover);
+}
+
+.modal-button:active {
+  background-color: var(--button-second-activated);
+}
+
 .modal {
   position: absolute;
-  bottom: 222px;
-  left: 50%;
+  width: 100%;
+  top: 100%;
+  left: 0;
   color: var(--basic-black);
   background-color: var(--basic-white);
   font-size: 14px;
@@ -501,8 +511,6 @@ img {
   font-weight: bold;
   background-position: 0 0;
   padding: 0;
-  transform: translate(-50%, 0);
-  width: 568px;
   z-index: 300;
   transition: all 2s;
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
@@ -536,7 +544,6 @@ img {
   font-weight: bold;
 }
 
-.search-form input[type="date"],
 .search-form input[type="date"] {
   font: inherit;
   background-color: #f2f2f2;
@@ -578,7 +585,6 @@ img {
   line-height: 36px;
   vertical-align: middle;
   font-weight: 700;
-  align-self: center;
   margin-left: 53px;
   margin: 0;
 }
@@ -590,10 +596,13 @@ img {
 .search-form-appointment input {
   width: 38px;
   height: 38px;
-  font: inherit;
+  border: none;
   box-sizing: border-box;
   background-color: #f2f2f2;
-  align-self: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
 }
 
 .appointment-input {
@@ -601,41 +610,40 @@ img {
 }
 
 .btn-minus {
-  -position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 38px;
   height: 38px;
-  -right: 116px;
-  -top: 0px;
   border: none;
+  cursor: pointer;
 }
 
 .btn-minus-ico {
   fill: var(--number-btn-grey);
-  -top: 18px;
-  -left: 13px;
-  -position: absolute;
 }
 
 .btn-plus {
-  -position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 38px;
   height: 38px;
-  -right: 39px;
-  -top: 0px;
   border: none;
+  cursor: pointer;
 }
 
 .btn-plus-ico {
   fill: var(--number-btn-grey);
 }
 
-.btn-minus-ico:hover,
-.btn-plus-ico:hover {
+.btn-minus:hover .btn-minus-ico,
+.btn-plus:hover .btn-plus-ico {
   fill: var(--basic-black);
 }
 
-.btn-minus-ico:active,
-.btn-plus-ico:active {
+.btn-minus:active .btn-minus-ico,
+.btn-plus:active .btn-plus-ico {
   fill: var(--number-btn-blue);
 }
 
@@ -654,19 +662,30 @@ input[type="number"]:focus {
   margin: 0;
 }
 
-[type="date"] {
+input[type="number"]:hover {
+  background: #ebebeb;
+}
+
+input[type="number"]:focus {
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+}
+
+input[type="date"] {
   background: #f2f2f2 url(../img/calendar.png) 97% 50% no-repeat;
   background-size: 21px;
 }
 
-[type="date"]:hover {
-  background: #f2f2f2 url(../img/calendar-hover.png) 97% 50% no-repeat;
+input[type="date"]:hover {
+  background: #ebebeb url(../img/calendar-hover.png) 97% 50% no-repeat;
   background-size: 21px;
 }
 
-[type="date"]:active {
-  background: #f2f2f2 url(../img/calendar-active.png) 97% 50% no-repeat;
+input[type="date"]:focus {
+  background: #ffffff url(../img/calendar-active.png) 97% 50% no-repeat;
   background-size: 21px;
+  border: 2px solid #e5e5e5;
+  outline: none;
 }
 
 [type="date"]::-webkit-inner-spin-button {
@@ -911,6 +930,11 @@ input[type="number"]:focus {
   border-radius: 2px;
   background-color: transparent;
   border: none;
+}
+
+.price-controls input[type="number"] {
+  border: none;
+  background-color: transparent;
 }
 
 .price-controls input::-webkit-outer-spin-button,
