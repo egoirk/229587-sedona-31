@@ -755,20 +755,8 @@ input[type="date"]:focus {
   display: block;
   cursor: pointer;
   user-select: none;
-
   left: 41px;
   margin-top: 20px;
-}
-
-.filter-checkbox-on + label::before {
-  content: "";
-  position: absolute;
-  left: -41px;
-  top: 0;
-  width: 26px;
-  height: 23px;
-  background-image: url("../img/icon/checkbox-on.svg");
-  background-position: 0 0;
 }
 
 .filter-checkbox + label::before {
@@ -779,7 +767,7 @@ input[type="date"]:focus {
   width: 23px;
   height: 23px;
   background-image: url("../img/icon/checkbox-off.svg");
-  border-radius: 3px;
+  background-repeat: no-repeat;
 }
 
 .filter-checkbox:checked + label::before {
@@ -790,7 +778,7 @@ input[type="date"]:focus {
   width: 27px;
   height: 23px;
   background-image: url("../img/icon/checkbox-on.svg");
-  background-position: 0 0;
+  background-repeat: no-repeat;
 }
 
 .filter-checkbox:disabled:checked + label::before {
@@ -801,7 +789,7 @@ input[type="date"]:focus {
   width: 27px;
   height: 23px;
   background-image: url("../img/icon/checkbox-on-disabled.svg");
-  background-position: 0 0;
+  background-repeat: no-repeat;
 }
 
 .filter-checkbox:disabled + label::before {
@@ -812,7 +800,7 @@ input[type="date"]:focus {
   width: 23px;
   height: 23px;
   background-image: url("../img/icon/checkbox-off-disabled.svg");
-  background-position: 0 0;
+  background-repeat: no-repeat;
 }
 
 .filter-checkbox:focus + label::before {
