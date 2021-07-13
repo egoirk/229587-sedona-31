@@ -105,17 +105,17 @@
         <h3>Заинтересовались?</h3>
         <p class="search-info">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне</p>
         <div class="popup">
-          <a class="button popup-button" href="blank.html">Поиск гостиницы в Седоне</a>
+          <a class="button popup-button">Поиск гостиницы в Седоне</a>
           <section class="popup-form">
             <h2 class="visually-hidden">Форма поиска</h2>
             <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
               <p class="search-form-date">
                 <label for="appointment-date">Дата заезда:</label>
-                <input id="appointment-date" type="date" name="date" placeholder="24 апреля 2017"> 
+                <input class="appointment" id="appointment-date" type="date" name="date" placeholder="24 апреля 2017"> 
               </p>
               <p class="search-form-date">
                 <label for="checkout-date">Дата выезда:</label>
-                <input id="checkout-date" type="date" name="date" placeholder="4 июля 2017">
+                <input class="checkout" id="checkout-date" type="date" name="date" placeholder="4 июля 2017">
               </p>
       
               <div class="search-form-appointment">
@@ -127,7 +127,7 @@
                       <rect width="12" height="3" fill="" />
                       </svg>
                     </button>
-                    <input id="appointment-name" type="number" name="grown" value="2" min="1">
+                    <input id="appointment-name" type="number" name="grown" value="1" min="1">
                     <button class="btn-plus" type="button">
                       <svg class="btn-plus-ico" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="" />
@@ -144,7 +144,7 @@
                     <rect width="12" height="3" fill="" />
                     </svg>
                   </button>
-                  <input id="appointment-child" type="number" name="child" value="1" min="0">
+                  <input id="appointment-child" type="number" name="child" value="0" min="0">
                   <button class="btn-plus" type="button">
                     <svg class="btn-plus-ico" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="" />
@@ -214,5 +214,6 @@
     </div>
     </footer>
   </div>
+  <script src="js/popup.js"></script>
   </body>
 </html>
