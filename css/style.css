@@ -30,6 +30,8 @@
   --basic-gray: #e5e5e5;
   --sorting-control-hover: #000000;
   --sorting-control-active: #81b3d2;
+  --calendar-hover: #000000;
+  --calendar-active: #81b3d2;
   --number-btn-grey: #a9a9a9;
   --number-btn-blue: #81b3d2;
 
@@ -159,6 +161,8 @@ img {
   flex-direction: column;
   align-items: stretch;
   text-align: center;
+  margin: 0;
+  line-height: 26px;
 }
 
 .container-header-img {
@@ -171,19 +175,25 @@ img {
 
 .container-header h1 {
   font-size: 21px;
-  margin: 42px 10px;
+  padding-top: 41px;
+  margin: 0 auto;
 }
 
 .container-header p {
-  line-height: 26px;
-  margin: 16px 10px 51px;
+  padding-top: 43px;
+  margin: 0 auto;
 }
 
 /* Features */
 
+.features {
+  margin-top: 51px;
+}
+
 .features-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .features-list-body {
@@ -243,6 +253,7 @@ img {
 
 .feature-item-bg {
   background-color: var(--list-item-bg);
+  height: 256px;
 }
 
 .feature-item .feature-item-p {
@@ -317,17 +328,25 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 24px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .search h3 {
   font-size: 30px;
   font-weight: 700;
+  line-height: 24px;
+  padding: 0;
+  margin: 57px auto 33px 446px;
 }
 
 .search-info {
+  height: 95px;
   font-size: 14px;
   text-align: center;
+  line-height: 24px;
+  margin: 0;
 }
 
 /* Button */
@@ -357,6 +376,7 @@ img {
 
 .main-footer {
   width: 100%;
+  height: 120px;
   line-height: 26px;
   background-position: 0 0;
   background-repeat: repeat;
@@ -395,6 +415,7 @@ img {
 .footer-contacts p {
   margin: 0;
   padding: 0;
+  padding-bottom: 8px;
 }
 
 .footer-contacts a {
@@ -413,9 +434,15 @@ img {
 }
 
 .footer-copyright {
-  justify-self: end;
-  align-self: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding-right: 131px;
+  justify-self: right;
+  align-self: center;
+}
+
+.footer-copyright p {
+  padding: 2px 0 0 26px;
 }
 
 /* Social button */
@@ -480,7 +507,7 @@ img {
   width: 568px;
   height: 86px;
   position: relative;
-  margin-top: 24px;
+  margin: 0;
 }
 
 .popup-button {
@@ -523,6 +550,52 @@ img {
 }
 
 /* Popup form */
+
+.appointment {
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 14px;
+  margin-bottom: 30px;
+  width: 346px;
+  font: inherit;
+  font-weight: inherit;
+  text-transform: uppercase;
+  background: #f2f2f2;
+  border: none;
+  box-sizing: border-box;
+}
+
+.appointment:hover {
+  background: #ebebeb;
+  border: none;
+}
+
+.appointment:focus {
+  background: var(--basic-white);
+  outline: 2px solid #e5e5e5;
+}
+
+.calendar-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.calendar-button:hover path {
+  fill: var(--calendar-hover);
+}
+
+.calendar-button:focus path {
+  fill: var(--calendar-hover);
+}
+
+.calendar-button:active path {
+  fill: var(--calendar-active);
+}
 
 .search-form {
   margin: 0;
@@ -580,9 +653,10 @@ img {
 
 .search-form-type {
   display: flex;
-  width: 25%;
-  margin-top: 0;
-  margin-bottom: 0;
+  justify-content: space-between;
+  margin: 0 0 54px;
+  width: 458px;
+  box-sizing: border-box;
 }
 
 .search-form-appointment label {
@@ -675,30 +749,6 @@ input[type="number"]:hover {
 input[type="number"]:focus {
   background: #ffffff;
   border: 2px solid #e5e5e5;
-}
-
-input[type="date"] {
-  background: #f2f2f2 url(../img/calendar.png) 97% 50% no-repeat;
-  background-size: 21px;
-}
-
-input[type="date"]:hover {
-  background: #ebebeb url(../img/calendar-hover.png) 97% 50% no-repeat;
-  background-size: 21px;
-}
-
-input[type="date"]:focus {
-  background: #ffffff url(../img/calendar-active.png) 97% 50% no-repeat;
-  background-size: 21px;
-  border: 2px solid #e5e5e5;
-  outline: none;
-}
-
-[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
 }
 
 .search-button {
