@@ -387,10 +387,8 @@ img {
 }
 
 .inner-footer {
-  width: 100%;
+  height: 120px;
   line-height: 26px;
-  background-position: 0 0;
-  background-repeat: repeat;
   background-color: var(--basic-white);
 }
 
@@ -442,7 +440,21 @@ img {
 }
 
 .footer-copyright p {
-  padding: 2px 0 0 26px;
+  padding: 6px 0 0 26px;
+}
+
+.inner-footer .footer-copyright {
+  display: grid;
+  height: 28px;
+  grid-template-columns: 1fr 1fr;
+  padding-right: 131px;
+  justify-self: right;
+  align-self: center;
+}
+
+.inner-footer .footer-copyright p {
+  padding: 0px;
+  margin: 8px 0 0 26px;
 }
 
 /* Social button */
@@ -457,11 +469,11 @@ img {
 }
 
 .footer-social-icon li {
-  padding-top: 13px;
+  padding-top: 10px;
 }
 
 .social-link {
-  display: inline-block;
+  display: block;
   text-align: center;
   width: 46px;
   height: 48px;
@@ -483,7 +495,7 @@ img {
 }
 
 .footer-copy {
-  display: inline-block;
+  display: block;
   width: 115px;
   height: 33px;
   margin: 0;
@@ -552,9 +564,9 @@ img {
 /* Popup form */
 
 .appointment {
-  padding-top: 7px;
+  padding-top: 3px;
   padding-bottom: 9px;
-  padding-left: 14px;
+  padding-left: 13px;
   margin-bottom: 30px;
   width: 346px;
   font: inherit;
@@ -619,7 +631,7 @@ img {
   display: block;
   margin-bottom: 9px;
   font-size: 14px;
-  line-height: 36px;
+  line-height: 32px;
   font-weight: bold;
 }
 
@@ -646,7 +658,7 @@ img {
   margin: auto;
   width: 100%;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 53px;
   height: 38px;
   position: relative;
 }
@@ -662,7 +674,7 @@ img {
 .search-form-appointment label {
   margin-bottom: 9px;
   font-size: 14px;
-  line-height: 36px;
+  line-height: 30px;
   vertical-align: middle;
   font-weight: 700;
   margin-left: 53px;
@@ -685,8 +697,14 @@ img {
   font-weight: 700;
 }
 
-.appointment-input {
+.appointment-input-adult {
   display: flex;
+  padding-left: 41px;
+}
+
+.appointment-input-child {
+  display: flex;
+  padding-left: 30px;
 }
 
 .btn-minus {
@@ -754,6 +772,7 @@ input[type="number"]:focus {
 .search-button {
   width: 458px;
   height: 58px;
+  font-size: 21px;
   background-color: var(--button-first-default);
   justify-self: center;
 }
@@ -840,12 +859,17 @@ input[type="number"]:focus {
 
 .filter-list {
   list-style: none;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 21px;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.filter-list li {
+  padding: 3px 0;
 }
 
 .fieldset:nth-child(2) {
@@ -946,8 +970,7 @@ input[type="number"]:focus {
   height: 10px;
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
-  padding-right: 20px;
+  margin-bottom: 24px;
   padding-left: 0;
   padding-top: 20px;
   border-radius: 2px;
@@ -960,7 +983,7 @@ input[type="number"]:focus {
 }
 
 .range-controls .bar {
-  width: 248px;
+  width: 255px;
   height: 2px;
   background: var(--basic-white);
 }
@@ -1000,7 +1023,7 @@ input[type="number"]:focus {
 }
 
 .range-controls .toggle-max {
-  left: 244px;
+  left: 252px;
 }
 
 .price-controls {
@@ -1017,8 +1040,8 @@ input[type="number"]:focus {
 .price-controls::before {
   content: "";
   position: absolute;
-  left: 157px;
-  top: 7px;
+  left: 159px;
+  top: 8px;
   width: 2px;
   height: 22px;
   background-color: var(--basic-white);
@@ -1043,10 +1066,14 @@ input[type="number"]:focus {
   -webkit-appearance: none;
 }
 
-.min-price,
+.min-price {
+  padding-top: 7px;
+  padding-left: 46px;
+}
+
 .max-price {
   padding-top: 7px;
-  padding-left: 40px;
+  padding-left: 25px;
 }
 
 .filter-item-button {
@@ -1104,13 +1131,14 @@ input[type="number"]:focus {
   line-height: 18px;
   margin: 0;
   padding-right: 40px;
+  padding-top: 2px;
 }
 
 .sorting-list {
   display: flex;
   justify-content: flex-start;
   list-style: none;
-  padding: 0;
+  padding: 4px 0 0;
   margin: 0;
 }
 
@@ -1146,7 +1174,7 @@ input[type="number"]:focus {
   width: 34px;
   list-style: none;
   justify-content: space-between;
-  padding: 0;
+  padding: 7px 0 0;
   margin: 0;
 }
 
@@ -1240,6 +1268,7 @@ input[type="number"]:focus {
   flex-direction: column;
   justify-content: space-between;
   color: var(--special-catalog);
+  padding-top: 5px;
 }
 
 .catalog-item-rating p:nth-child(2) {
